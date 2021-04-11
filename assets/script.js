@@ -4,39 +4,44 @@ let saveDay = $(".saveBtn");
 
 
 function currentWorkDay() {
-
-let rightNow = moment().format("dddd, MMMM Do");
+    
+    let rightNow = moment().format("dddd, MMMM Do");
     timeDisplay.text(rightNow);
 
     for (let i = 9; i < 18; ++i) {
         $("#input" + i).val(localStorage.getItem("hour" + i));
     }
 
-let Hour = moment().format("h");
-let amPm = moment().format("a")
-if (amPm === "pm") {
-    Hour = Hour + 12;
-}
+    let Hour = moment().format("h");
+    let amPm = moment().format("a")
 
-let currentHour =  Hour;
+    if (amPm === "pm") {
+        Hour = Hour + 12;
+    }
 
-for (let i = 9; i < 18; ++i) {
-    let currentBlock = i;
+
+
+    let currentHour =  Hour;
+
+    for (let i = 9; i < 18; ++i) {
+        let currentBlock = i;
    
-    if (currentBlock === currentHour) {
-        $("#" + "hour" + i).addClass("present");
-    }
+        if (currentBlock === currentHour) {
+            $("#" + "hour" + i).addClass("present");
+        }
       
-    else if (currentBlock < currentHour) {
-        $("#" + "hour" + i).addClass("past");
+        else if (currentBlock < currentHour) {
+            $("#" + "hour" + i).addClass("past");
+        }
+  
+        else if (currentBlock > currentHour) {
+            $("#" +"hour" + i).addClass("future");
+        }
     }
   
-    else if (currentBlock > currentHour) {
-        $("#" +"hour" + i).addClass("future");
-    }
 }
-  
-}
+
+
 
 saveDay.on('click', function() {
 
