@@ -21,10 +21,8 @@ if (amPm === "pm") {
 let currentHour =  Hour;
 
 for (let i = 9; i < 18; ++i) {
-    // let currentBlock = "#" + "hour" + i;
     let currentBlock = i;
-    console.log(currentBlock);
-    console.log(currentHour)
+   
     if (currentBlock === currentHour) {
         $("#" + "hour" + i).addClass("present");
     }
@@ -50,28 +48,3 @@ saveDay.on('click', function() {
 
 currentWorkDay();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Need to set up program so that when the user clicks save it saves into local storage
-// need to set it up so that the saved events re-appear when user refreshes the 
