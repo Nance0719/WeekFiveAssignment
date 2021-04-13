@@ -15,13 +15,17 @@ function currentWorkDay() {
     let Hour = moment().format("h");
     let amPm = moment().format("a")
 
+    console.log(Hour);
+
     if (amPm === "pm") {
-        Hour = Hour + 12;
+        Hour = (parseInt(Hour) + 12);
     }
 
 
 
     let currentHour =  Hour;
+  
+   
 
     for (let i = 9; i < 18; ++i) {
         let currentBlock = i;
@@ -38,6 +42,12 @@ function currentWorkDay() {
             $("#" +"hour" + i).addClass("future");
         }
     }
+
+    currentHour = 0;
+    Hour = 0
+    
+
+    
   
 }
 
