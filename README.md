@@ -40,7 +40,7 @@ https://choosealicense.com/
 
 
 ## Website
-https://coreynance.github.io/WeekFiveAssignment/
+ https://coreynance.github.io/Daily_Planner/
 
 ## License
 MIT License
